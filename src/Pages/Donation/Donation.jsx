@@ -1,20 +1,35 @@
 import { useEffect, useState } from "react";
+// import DonationCard from "../../Components/Donations/DonationCard";
+import DonateCard from "./DonateCard";
 
 
 const Donation = () => {
 
-    // const [donate, setDonate] = useState([]);
+    // const { picture, description } = donation;
 
-    // useEffect(() => {
-    //     const donateItems = JSON.parse(localStorage.getItem('donate'))
-    //     setDonate(donateItems)
-    // }, [])
+    const [donate, setDonate] = useState([])
+    const [noData, setNoData] = useState('')
 
-    // console.log(donate)
+    useEffect(() => {
+        const donateItems = JSON.parse(localStorage.getItem('donate'))
+        if (donateItems) {
+            setDonate(donateItems)
+        }
+        else {
+
+            setNoData('No Data Found')
+        }
+    }, [])
+
+    console.log(donate)
 
     return (
         <div>
-            <h2>Donation</h2>
+            {noData ? <p>{noData}</p> :
+                <div className="grid md:grid-cols-2">
+                    {donate.map(donation => <DonateCard key={donation.id} donation={donation}></DonateCard>)}
+                </div>
+            }
         </div>
     );
 };
