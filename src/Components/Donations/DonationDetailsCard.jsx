@@ -4,20 +4,20 @@ import swal from "sweetalert";
 const DonationDetailsCard = ({ donation }) => {
     const { id, picture, description } = donation;
 
-    const handleAddToDonate = () =>{
+    const handleAddToDonate = () => {
 
         const addedDonateItems = [];
 
         const donateItems = JSON.parse(localStorage.getItem('donate'))
 
-        if(!donateItems){
+        if (!donateItems) {
             addedDonateItems.push(donation)
             localStorage.setItem('donate', JSON.stringify(addedDonateItems))
             swal("Your Donation Successfully Done!");
 
         }
-        
-        else{
+
+        else {
             addedDonateItems.push(...donateItems, donation)
             localStorage.setItem('donate', JSON.stringify(addedDonateItems))
             swal("Your Donation Successfully Done!");
@@ -28,10 +28,12 @@ const DonationDetailsCard = ({ donation }) => {
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">
                 <figure>
-                    <img className="" src={picture} alt="" />
-                    <div className="absolute">
-                            <button onClick={handleAddToDonate} className="btn btn-primary">Donate $290</button>
+                    <img className="w-screen h-auto" src={picture} alt="" />
+                    <div className="flex absolute hero-overlay h-1/6 items-center px-9">
+                        <div className=" ">
+                            <button onClick={handleAddToDonate} className="p-4 rounded-md text-white text-lg font-semibold bg-[#FF444A]">Donate $290</button>
                         </div>
+                    </div>
                 </figure>
                 <div className="card-body">
                     <p>{description}</p>
