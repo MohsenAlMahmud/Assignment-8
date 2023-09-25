@@ -7,8 +7,8 @@ const Statistics = () => {
     
 
     const data = [
-        { name: 'Group A', value: donateItems.length, fill: '#00C49F' },
-        { name: 'Group B', value: 12-donateItems.length, fill: '#FF444A' },
+        { name: 'Total Donation', value: Math.round((donateItems.length/12)*100), fill: '#FF444A' },
+        { name: 'Your Donation', value: Math.round((12-donateItems.length)/12*100), fill: '#00C49F' },
         
       ];
 

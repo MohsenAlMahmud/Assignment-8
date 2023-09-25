@@ -36,7 +36,7 @@ const Donation = () => {
                 </div>
                 
             } 
-            {donate.length > 4 && <button onClick={()=>setIsShowAll(!isShowAll)} className="px-5 bg-red-400 block mx-auto hidden">Show All</button> }          
+            {donate.length > 4 && <button onClick={()=>setIsShowAll(!isShowAll)} className="px-5 bg-red-400 block mx-auto">Show All</button> }          
         </div>
     );
 };
