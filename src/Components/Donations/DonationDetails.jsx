@@ -15,8 +15,8 @@ const DonationDetails = () => {
 
     useEffect(() =>{
 
-        const finddonation = donations?.find(donation => donation.id == id)
-        setDonation(finddonation)
+        const findDonation = donations?.find(donation => donation.id == id)
+        setDonation(findDonation)
 
     },[id, donations])
 

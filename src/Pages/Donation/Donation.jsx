@@ -28,7 +28,7 @@ const Donation = () => {
     return (
         <div>
             {noData ? <p>{noData}</p> :
-                <div className="grid md:grid-cols-2">
+                <div className="grid md:grid-cols-2 gap-5 mt-10">
                     {
                         isShowAll ? donate.map(donation => <DonateCard key={donation.id} donation={donation}></DonateCard>)
                         : donate.slice(0, 4).map(donation => <DonateCard key={donation.id} donation={donation}></DonateCard>)
