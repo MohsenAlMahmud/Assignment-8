@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-// import DonationCard from "../../Components/Donations/DonationCard";
+
 import DonateCard from "./DonateCard";
 
 
 const Donation = () => {
 
-    // const { picture, description } = donation;
+    
 
     const [donate, setDonate] = useState([])
     const [noData, setNoData] = useState('')
+    const [isShowAll, setIsShowAll] = useState(false)
 
     useEffect(() => {
         const donateItems = JSON.parse(localStorage.getItem('donate'))
@@ -20,16 +21,22 @@ const Donation = () => {
             setNoData('No Data Found')
         }
     }, [])
+    
 
-    console.log(donate)
+    console.log(isShowAll)
 
     return (
         <div>
             {noData ? <p>{noData}</p> :
                 <div className="grid md:grid-cols-2">
-                    {donate.map(donation => <DonateCard key={donation.id} donation={donation}></DonateCard>)}
+                    {
+                        isShowAll ? donate.map(donation => <DonateCard key={donation.id} donation={donation}></DonateCard>)
+                        : donate.slice(0, 4).map(donation => <DonateCard key={donation.id} donation={donation}></DonateCard>)
+                    }
                 </div>
-            }
+                
+            } 
+            {donate.length > 4 && <button onClick={()=>setIsShowAll(!isShowAll)} className="px-5 bg-red-400 block mx-auto hidden">Show All</button> }          
         </div>
     );
 };

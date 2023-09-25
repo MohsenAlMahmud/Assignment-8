@@ -1,12 +1,11 @@
-import HeaderBody from "./HeaderBody";
+
 import Navbar from "./Navbar";
 
 
 const Header = () => {
     return (
         <div>
-            <Navbar></Navbar>
-            <HeaderBody></HeaderBody>
+            <Navbar></Navbar>            
         </div>
     );
 };
