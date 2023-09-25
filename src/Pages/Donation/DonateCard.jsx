@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 
 const DonateCard = ({ donation }) => {
-    const { id, category, title, picture, price, text_color, button_bg_color, category_bg_color } = donation;
+    const { id, category, title, picture, price, text_color, button_bg_color, category_bg_color, image } = donation;
     return (
         <div className="">
             <div className="flex">
                 <div>
-                    <figure><img src={picture} alt="" /></figure>
+                    <figure><img src={image} alt="" /></figure>
                 </div>
                 <div className="w-full">
                     <div style={{ backgroundColor: category_bg_color }} className="h-full px-3">
@@ -16,7 +16,7 @@ const DonateCard = ({ donation }) => {
                         <p className="font-semibold">${price}</p>
                         <Link to={`/donations/${id}`}>
                             <div className="">
-                                <button className="px-4 py-1 rounded-md btn-primary font-semibold">View Details</button>
+                                <button style={{ backgroundColor: text_color }} className="px-4 py-1 rounded-md btn-primary font-semibold mt-3">View Details</button>
                             </div>
                         </Link>
                     </div>

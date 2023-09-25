@@ -16,7 +16,7 @@ const Statistics = () => {
         <PieChart width={1200} height={600}>
           <Pie
             dataKey="value"
-            isAnimationActive={false}
+            isAnimationActive={true}
             data={data}
             cx="50%"
             cy="50%"
@@ -27,7 +27,9 @@ const Statistics = () => {
           
           <Tooltip />
         </PieChart>
+        
     );
+    
 };
 
 export default Statistics;
