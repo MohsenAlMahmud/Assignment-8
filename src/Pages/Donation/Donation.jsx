@@ -20,10 +20,11 @@ const Donation = () => {
 
             setNoData('No Data Found')
         }
-    }, [])
-    
+    }, []);
 
-    console.log(isShowAll)
+    const handleSeeAll = () =>{
+        setIsShowAll(true);
+    };
 
     return (
         <div>
@@ -36,7 +37,7 @@ const Donation = () => {
                 </div>
                 
             } 
-            {donate.length > 4 && <button onClick={()=>setIsShowAll(!isShowAll)} className="px-5 bg-red-400 block mx-auto">Show All</button> }          
+            {donate.length > 4 && !isShowAll && <button onClick={()=>setIsShowAll(!isShowAll)} className="px-5 py-2 bg-[#009444] block mx-auto mt-4 rounded-md font-semibold text-white">See All</button> }          
         </div>
     );
 };

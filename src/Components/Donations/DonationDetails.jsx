@@ -8,10 +8,8 @@ const DonationDetails = () => {
     const [donation, setDonation] = useState({});
 
     const { id } = useParams();
-    
 
     const donations = useLoaderData();
-    
 
     useEffect(() =>{
 
@@ -19,8 +17,6 @@ const DonationDetails = () => {
         setDonation(findDonation)
 
     },[id, donations])
-
-    // console.log(donation)
 
     return (
         <div>

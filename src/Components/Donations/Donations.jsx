@@ -2,7 +2,7 @@ import DonationCard from "./DonationCard";
 
 
 const Donations = ({donations}) => {
-    // console.log(donations)
+    
     return (
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
             {

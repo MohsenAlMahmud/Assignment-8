@@ -9,7 +9,7 @@ const Navbar = () => {
             <div>
                 <img src="/Resources/Logo.png" alt="" />
             </div>
-            <ul className="flex gap-10">
+            <ul className="flex gap-10 text-lg font-medium">
                 <li>
                     <NavLink
                         to="/"
@@ -43,16 +43,6 @@ const Navbar = () => {
             </ul>
         </nav>
 
-        // <div className="flex justify-between max-w-7xl mx-auto p-5">
-        //     <div>
-        //         <img src="/Resources/Logo.png" alt="" />
-        //     </div>
-        //     <div className="flex gap-10">
-        //         <Home></Home>
-        //         <Donation></Donation>
-        //         <Statistics></Statistics>
-        //     </div>
-        // </div>
     );
 };
 
