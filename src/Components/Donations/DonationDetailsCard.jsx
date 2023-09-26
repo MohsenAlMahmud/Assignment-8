@@ -26,10 +26,10 @@ const DonationDetailsCard = ({ donation }) => {
 
     return (
         <div>
-            <div className="card card-compact bg-base-100 shadow-xl">
-                <figure>
+            <div className="card  card-compact bg-base-100 shadow-xl">
+                <figure className="relative">
                     <img className="w-screen h-auto" src={picture} alt="" />
-                    <div className="flex absolute hero-overlay h-1/6 items-center px-9">
+                    <div className="flex absolute top-32 md:top-80 lg:top-[670px] hero-overlay h-2/6 md:h-1/6 items-center px-9 ">
                         <div className=" ">
                             <button onClick={handleAddToDonate} style={{ backgroundColor: text_color }} className="p-4 rounded-md text-white text-lg font-semibold">Donate $290</button>
                         </div>

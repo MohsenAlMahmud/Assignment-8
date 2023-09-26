@@ -2,19 +2,23 @@
 import { PieChart, Pie, Tooltip } from 'recharts';
 
 const Statistics = () => {
-  const donateItems = JSON.parse(localStorage.getItem('donate'))
+  const donateItemsJSON = localStorage.getItem('donate');
+  const donateItems = donateItemsJSON ? JSON.parse(donateItemsJSON) : [];
+  
+  const totalDonationValue = Math.round((12 - donateItems.length) / 12 * 100);
+  const yourDonationValue = Math.max(0, Math.round((donateItems.length / 12) * 100));
 
   const data = [
-    { name: 'Total Donation', value: Math.round((12 - donateItems?.length) / 12 * 100), fill: '#FF444A' },
-    { name: 'Your Donation', value: Math.round((donateItems?.length / 12) * 100), fill: '#00C49F' },
+    { name: 'Total Donation', value: totalDonationValue, fill: '#FF444A' },
+    { name: 'Your Donation', value: yourDonationValue, fill: '#00C49F' },
   ];
-
+  
   return (
     <div>
-      <PieChart width={1200} height={600}>
+      <PieChart width={1300} height={600}>
         <Pie
           dataKey="value"
-          isAnimationActive={false}
+          isAnimationActive={true}
           data={data}
           cx="50%"
           cy="50%"

@@ -10,13 +10,15 @@ const DonationDetails = () => {
     const { id } = useParams();
 
     const donations = useLoaderData();
+    console.log(donation)
+    useEffect(() => {
+        if (donations) {
+            const findDonation = donations?.find(donation => donation.id == id)
+            setDonation(findDonation)
+        }
 
-    useEffect(() =>{
 
-        const findDonation = donations?.find(donation => donation.id == id)
-        setDonation(findDonation)
-
-    },[id, donations])
+    }, [id, donations])
 
     return (
         <div>
