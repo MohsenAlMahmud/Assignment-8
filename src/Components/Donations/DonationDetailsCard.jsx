@@ -2,7 +2,7 @@ import swal from "sweetalert";
 
 
 const DonationDetailsCard = ({ donation }) => {
-    const { id, picture, description, category_bg_color, button_bg_color, text_color } = donation;
+    const { id, picture, description, category_bg_color, button_bg_color, text_color, title } = donation;
 
     const handleAddToDonate = () => {
 
@@ -36,6 +36,7 @@ const DonationDetailsCard = ({ donation }) => {
                     </div>
                 </figure>
                 <div className="card-body">
+                <p className="text-4xl font-bold py-2">{title}</p>
                     <p>{description}</p>
                 </div>
             </div>

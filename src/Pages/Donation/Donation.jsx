@@ -18,7 +18,7 @@ const Donation = () => {
         }
         else {
 
-            setNoData('No Data Found')
+            setNoData('Please Donate')
         }
     }, []);
 
