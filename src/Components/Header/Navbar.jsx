@@ -7,7 +7,7 @@ const Navbar = () => {
 
         <nav className="flex justify-between p-5">
             <div>
-                <img src="/Resources/Logo.png" alt="" />
+                <img src="https://i.ibb.co/qJHgN6c/Logo.png" alt="" />
             </div>
             <ul className="flex gap-10 text-lg font-medium">
                 <li>
