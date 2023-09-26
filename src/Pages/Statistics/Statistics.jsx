@@ -5,8 +5,8 @@ const Statistics = () => {
   const donateItems = JSON.parse(localStorage.getItem('donate'))
 
   const data = [
-    { name: 'Total Donation', value: Math.round((12 - donateItems.length) / 12 * 100), fill: '#FF444A' },
-    { name: 'Your Donation', value: Math.round((donateItems.length / 12) * 100), fill: '#00C49F' },
+    { name: 'Total Donation', value: Math.round((12 - donateItems?.length) / 12 * 100), fill: '#FF444A' },
+    { name: 'Your Donation', value: Math.round((donateItems?.length / 12) * 100), fill: '#00C49F' },
   ];
 
   return (
