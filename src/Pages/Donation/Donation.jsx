@@ -28,7 +28,7 @@ const Donation = () => {
 
     return (
         <div>
-            {noData ? <p>{noData}</p> :
+            {noData ? <p className="flex min-h-screen text-5xl font-bold justify-center items-center">{noData}</p> :
                 <div className="grid md:grid-cols-2 gap-5 mt-10">
                     {
                         isShowAll ? donate.map(donation => <DonateCard key={donation.id} donation={donation}></DonateCard>)

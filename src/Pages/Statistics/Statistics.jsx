@@ -1,5 +1,5 @@
 
-import { PieChart, Pie, Tooltip } from 'recharts';
+import { PieChart, Pie, Tooltip, ResponsiveContainer } from 'recharts';
 
 const Statistics = () => {
   const donateItemsJSON = localStorage.getItem('donate');
@@ -15,19 +15,21 @@ const Statistics = () => {
   
   return (
     <div>
-      <PieChart width={1300} height={600}>
-        <Pie
-          dataKey="value"
-          isAnimationActive={true}
-          data={data}
-          cx="50%"
-          cy="50%"
-          outerRadius={200}
-          fill="#FF4500"
-          label
-        />
-        <Tooltip />
-      </PieChart>
+      <ResponsiveContainer width="100%" height={400}>
+        <PieChart>
+          <Pie
+            dataKey="value"
+            isAnimationActive={true}
+            data={data}
+            cx="50%"
+            cy="50%"
+            outerRadius={120}
+            fill="#FF4500"
+            label
+          />
+          <Tooltip />
+        </PieChart>
+      </ResponsiveContainer>
       <div className='flex justify-center gap-6'>
         <div className='flex items-center gap-4'>
           <h2 className='font-medium'>Your Donation</h2>
@@ -37,7 +39,6 @@ const Statistics = () => {
           <h2 className='font-medium'>Total Donation</h2>
           <div className='bg-[#FF444A] w-10 h-3'></div>
         </div>
-
       </div>
     </div>
 
