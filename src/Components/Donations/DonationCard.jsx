@@ -12,7 +12,7 @@ const DonationCard = ({ donation }) => {
                         <div className="card-actions">
                             <button style={{ color: text_color, backgroundColor: button_bg_color }} className="rounded-md px-4 font-medium">{category}</button>
                         </div>
-                        <p>{title}</p>
+                        <p style={{ color: text_color }} className="text-xl font-semibold py-2">{title}</p>
                     </div>
                 </div>
             </div>
